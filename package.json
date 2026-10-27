@@ -1,0 +1,15 @@
+{
+  "name": "email-panel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MailPanel — email panel for your own domain on Cloudflare Workers (KV)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "kv:create": "wrangler kv namespace create MAIL_KV",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

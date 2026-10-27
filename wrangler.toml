@@ -1,0 +1,21 @@
+name = "email-panel"
+main = "worker.js"
+compatibility_date = "2024-12-01"
+
+# ─── متغیرهای عمومی ─────────────────────────────────────────────
+[vars]
+DOMAIN = "example.com"        # ← دامنه خودت را اینجا بنویس (بدون https و www)
+# REJECT_UNKNOWN = "true"     # اختیاری: ایمیل به آدرس‌های تعریف‌نشده «رد» شود
+#                             # (پیش‌فرض: بی‌صدا حذف می‌شود)
+
+# ─── دیتابیس KV ─────────────────────────────────────────────────
+# قبل از دیپلو اجرا کن:  npx wrangler kv namespace create MAIL_KV
+# سپس id خروجی را جایگزین کن:
+[[kv_namespaces]]
+binding = "MAIL_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# ─── سکرت‌ها (با دستور جدا ست کن، اینجا ننویس!) ─────────────────
+# npx wrangler secret put ADMIN_PASSWORD
+# npx wrangler secret put SESSION_SECRET
+# npx wrangler secret put RESEND_API_KEY     ← اختیاری، فقط برای دکمه پاسخ
